@@ -1,39 +1,37 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# crop_monitoring_brand_contract
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/tools/pub/writing-package-pages).
+A shared **brand contract** (interfaces + data models) for Crop Monitoring Flutter apps.
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/to/develop-packages).
--->
+This package defines the structure for:
+- **Brand colors**
+- **Brand assets**
+- **Brand endpoints**
+- **Brand config interface**
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Other packages (example: `crop_monitoring_brand_mmc`, `crop_monitoring_brand_other`) implement this contract, and the core app (`app_core`) depends only on this contract to stay brand-agnostic.
+
+---
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+- Defines `BrandConfig` contract used by the app/core layer.
+- Provides immutable models:
+    - `BrandColors`
+    - `BrandAssets`
+    - `BrandEndpoints`
+- Includes `DefaultBrandConfig` for easy brand implementations.
+
+---
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+### Add dependency (Git)
 
-## Usage
+In your app/package `pubspec.yaml`:
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
-
-```dart
-const like = 'sample';
-```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```yaml
+dependencies:
+  crop_monitoring_brand_contract:
+    git:
+      url: https://github.com/saurabhmapmycrop/crop_monitoring_brand_contract.git
+      ref: v0.1.0
